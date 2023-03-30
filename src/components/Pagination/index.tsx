@@ -1,7 +1,12 @@
+import React, { MouseEventHandler } from "react";
 import { NextButton, PrevButton, PaginationContainer } from "./pagination";
 
+interface PaginationProps {
+  handlePrevPage: MouseEventHandler<HTMLButtonElement>;
+  handleNextPage: MouseEventHandler<HTMLButtonElement>;
+}
 
-const Pagination = ({ handlePrevPage, handleNextPage }) => {
+const Pagination: React.FC<PaginationProps> = ({ handlePrevPage, handleNextPage }) => {
   return (
     <PaginationContainer>
       <PrevButton onClick={handlePrevPage} >
@@ -14,4 +19,4 @@ const Pagination = ({ handlePrevPage, handleNextPage }) => {
   );
 };
 
-export default Pagination
+export default Pagination;
