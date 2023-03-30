@@ -1,4 +1,5 @@
 // pages/index.tsx
+import Pagination from '@/components/pagination';
 import Layout from '@/layouts';
 import { Router, useRouter } from 'next/router';
 import React, { useState, useCallback } from 'react';
@@ -31,9 +32,20 @@ const Home: React.FC = () => {
     router.push(`/details/${id}`);
   };
 
+    const [page, setPage] = useState(1);
+
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setPage((prevPage) => prevPage - 1);
+  };
+
+
   return (
     <Layout>
-      <h1>Rick and Morty Character Catalog</h1>
+      <h1>Catálogo de personagens de Rick e Morty</h1>
       <SearchBar onSearch={handleSearch} />
       {searchQuery && suggestedCharacters.length > 0 && (
         <SuggestionList
@@ -41,7 +53,8 @@ const Home: React.FC = () => {
           onSelect={handleSuggestionSelect}
         />
       )}
-      <CharacterList query={searchQuery} />
+      <CharacterList query={searchQuery} page={page}/>
+      <Pagination handlePrevPage={handlePrevPage} handleNextPage={handleNextPage} />
     </Layout>
   );
 };

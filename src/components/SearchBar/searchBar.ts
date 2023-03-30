@@ -30,5 +30,8 @@ export const SearchInput = styled.input`
 `;
 
 export const ContainerSerach = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
 `;

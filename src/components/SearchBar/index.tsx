@@ -1,8 +1,6 @@
-// components/SearchBar/index.tsx
 import React, { useState, useEffect } from 'react';
 import { SearchInput, ContainerSerach } from './searchBar';
 
-// components/SearchBar/index.tsx
 interface SearchBarProps {
   value: string;
   onChange: (value: string) => void;
