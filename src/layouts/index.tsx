@@ -1,16 +1,17 @@
-// components/Layout/index.tsx
 import React, { useState } from 'react';
 import { Container } from './layout';
 import { GlobalStyles } from '@/styles/styles/GlobalStyles';
-import Sidebar from '@/components/Sidebar/Sidebar';
-import FloatingIcon from '@/components/FloatIcon/floatIcon';
+import FloatingIcon from '@/components/FloatIcon';
+import Sidebar from '@/components/Sidebar/index';
+import { useFavorites } from '@/context/FavoritesContext';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+const Layout = ({ children }: LayoutProps) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { favorites } = useFavorites();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -22,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Container>
         {children}
         {isSidebarOpen && <Sidebar />}
-        <FloatingIcon onClick={toggleSidebar} />
+          <FloatingIcon onClick={toggleSidebar} count={favorites.length} />
       </Container>
     </>
   );

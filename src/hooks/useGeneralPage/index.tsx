@@ -1,14 +1,16 @@
+import { api } from "@/service";
 import { useRouter } from "next/router";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function useGeneralPage() {
-const [searchQuery, setSearchQuery] = useState('');
-  const router = useRouter()
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+  const [page, setPage] = useState(1);
   const [suggestedCharacters, setSuggestedCharacters] = useState([]);
   const [filters, setFilters] = useState({
-    status: '',
-    gender: '',
-    species: '',
+    status: "",
+    gender: "",
+    species: "",
   });
 
   const handleSearch = useCallback(async (query: string) => {
@@ -17,35 +19,36 @@ const [searchQuery, setSearchQuery] = useState('');
     const filterParams = Object.entries(filters)
       .filter(([, value]) => value)
       .map(([key, value]) => `${key}=${value}`)
-      .join('&');
-
-    const url = `https://rickandmortyapi.com/api/character/?name=${query}&${filterParams}`;
+      .join("&");
 
     if (query.trim().length > 0) {
-      const response = await fetch(url);
-      const data = await response.json();
+      const { data } = await api.get(`/character/?name=${query}&${filterParams}`);
       setSuggestedCharacters(data.results);
     } else {
       setSuggestedCharacters([]);
     }
   }, [filters]);
 
+  useEffect(() => {
+    return () => {
+      setSuggestedCharacters([]);
+    };
+  }, [filters]);
 
   const handleSuggestionSelect = (id: number) => {
-    setSearchQuery('');
+    setSearchQuery("");
     setSuggestedCharacters([]);
     router.push(`/details/${id}`);
   };
 
-  const [page, setPage] = useState(1);
 
-  const handleNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
+    const handleNextPage = () => {
+      setPage((prevPage) => prevPage + 1);
+    };
 
-  const handlePrevPage = () => {
-    setPage((prevPage) => prevPage !== 0 ? prevPage - 1 : 1);
-  };
+    const handlePrevPage = () => {
+      setPage((prevPage) => (prevPage !== 0 ? prevPage - 1 : 1));
+    };
 
   const handleFilterChange = (filterName: string, filterValue: string) => {
     setFilters((prevFilters) => ({
@@ -54,16 +57,15 @@ const [searchQuery, setSearchQuery] = useState('');
     }));
   };
 
-
-  return{
-handlePrevPage,
-handleFilterChange,
-handleNextPage,
-handleSuggestionSelect,
-handleSearch,
-searchQuery,
-suggestedCharacters,
-page,
-filters
-}
+  return {
+    handlePrevPage,
+    handleFilterChange,
+    handleNextPage,
+    handleSuggestionSelect,
+    handleSearch,
+    searchQuery,
+    suggestedCharacters,
+    page,
+    filters,
+  };
 }

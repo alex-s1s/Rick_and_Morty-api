@@ -1,6 +1,6 @@
 {
 	"character": {
-		"status" : {
+		"status": {
 			"Alive": "Vivo",
 			"Dead": "Morto",
 			"unknown": "Desconhecido"
@@ -9,25 +9,86 @@
 			"Alien": "Alienígena",
 			"Human": "Humano",
 			"unknown": "Desconhecido",
-			"Mythological Creature": "Criatura Mitológica",
+			"Mythological_Creature": "Criatura Mitológica",
 			"Animal": "Animal",
 			"Humanoid": "Humanoide",
 			"Cronenberg": "Cronenberg",
 			"Robot": "Robô",
 			"Poopybutthole": "Poopybutthole"
 		},
-		"gender" :{
+		"gender": {
 			"Female": "Feminino",
 			"Male": "Masculino",
 			"unknown": "Desconhecido",
 			"Genderless": "Sem gênero"
 		},
-		"type":{
+		"type": {
 			"Parasite": "Parasita",
-			"unknown": "Desconhecido"
+			"Bepisian": "Bepisian",
+			"Hole": "Buraco",
+			"unknown": "Desconhecido",
+			"Fish-Person": "Pessoa peixe",
+			"Monster": "Monstro",
+			"Cloned": "Clonado",
+			"Mytholog": "Mitológico",
+			"Animal": "Animal",
+			"Humanoid": "Humanoide",
+			"Meeseeks": "Meeseeks",
+			"Robot": "Robô",
+			"Human with antennae": "Humano com antenas",
+			"Human with ants in his eyes": "Humano com formigas nos olhos"
 		},
 		"origin": {
-			"unknown": "Desconhecido"
+			"unknown": "Desconhecido",
+			"Robot": "Robô",
+			"Earth": "Terra",
+			"Bepis_9": "Bepis 9",
+			"Alien": "Alienígena",
+			"Mythological": "Mitológico",
+			"Interdimensional": "Interdimensional",
+			"Animal": "Animal",
+			"Earth_(Replacement_Dimension)": "Terra (Dimensão de Substituição)",
+			"Humanoid": "Humanoide",
+			"Mr._Meeseeks_Box": "Caixa do Sr. Meeseeks",
+			"Cronenberg": "Cronenberg",
+			"Venzenulon_7": "Venzenulon 7",
+			"Earth_(C-137)": "Terra (C-137)"
+		},
+		"location": {
+			"unknown": "Desconhecido",
+			"Bepis_9": "Bepis 9",
+			"Earth_(C-137)": "Terra (C-137)",
+			"Earth_(Replacement_Dimension)": "Terra (Dimensão de Substituição)",
+			"Abadango": "Abadango",
+			"Citadel_of_Ricks": "Citadel of Ricks",
+			"Cronenberg_World": "Mundo Cronenberg",
+			"Earth_(C-500A)": "Terra (C-500A)",
+			"Earth_(K-83)": "Terra (K-83)",
+			"Giant's_Town": "Cidade dos Gigantes",
+			"Anatomy_Park": "Parque da Anatomia",
+			"Interdimensional_Cable": "Cabo Interdimensional",
+			"Earth_(5-126)": "Terra (5-126)",
+			"Mr._Goldenfold's_dream": "Sonho do Sr. Goldenfold",
+			"Venzenulon_7": "Venzenulon 7",
+			"Morty's_Mind_Blowers": "Explosão da Mente de Morty",
+			"Purge_Planet": "Planeta da Purga",
+			"Earth_(J19ζ7)": "Terra (J19ζ7)",
+			"Planet_Squanch": "Planeta Squanch",
+			"Roy:_A_Life_Well_Lived": "Roy: Uma Vida Bem Vivida",
+			"Earth_(D716)": "Terra (D716)",
+			"Earth_(D716-B)": "Terra (D716-B)",
+			"Earth_(D716-C)": "Terra (D716-C)",
+			"Greasy_Grandma_World": "Mundo da Avó Gordurosa",
+			"Hamster_in_Butt_World": "Mundo do Hamster no Traseiro",
+			"Alphabetrium": "Alphabetrium",
+			"Gazorpazorp": "Gazorpazorp",
+			"Resort_Planet": "Planeta Resort",
+			"Snuffles'_Dream": "Sonho do Snuffles",
+			"Testicle_Monster_Dimension": "Dimensão do Monstro Testículo",
+			"Zeep_Xanflorp's_Miniverse": "Miniverso do Zeep Xanflorp",
+			"Butthole_Ice_Cream_Parlor": "Sorveteria do Traseiro",
+			"Earth_(Fascist_Dimension)": "Terra (Dimensão Fascista)",
+			"Lighthouse_Dimension": "Dimensão do Farol"
 		}
 	}
 }

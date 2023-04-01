@@ -60,7 +60,12 @@ export const CardButton = styled.button`
   }
 `;
 
-export const FavoriteIcon = styled.div`
+interface FavoriteIconProps {
+  onClick: () => void;
+  isFavorited: boolean;
+}
+
+export const FavoriteIcon = styled.div<FavoriteIconProps>`
   position: absolute;
   top: 10px;
   right: 10px;

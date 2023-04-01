@@ -1,5 +1,4 @@
 // pages/index.tsx
-import Pagination from '@/components/pagination';
 import Layout from '@/layouts';
 import CharacterList from '@/components/CharacterList';
 import SearchBar from '@/components/SearchBar';
@@ -7,6 +6,7 @@ import SuggestionList from '@/components/SuggestionList';
 import Filters from '@/components/Filters';
 import useGeneralPage from '@/hooks/useGeneralPage';
 import { SearchWrapper } from '@/styles/styles/GlobalStyles';
+import Pagination from '@/components/Pagination';
 
 const Home = () => {
   const {

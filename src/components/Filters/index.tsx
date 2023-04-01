@@ -2,50 +2,33 @@
 import React, { useState } from 'react';
 import {FilterContainer, FilterSelect} from './filter'
 import { CardButton } from '../CharacterCard/characterCard';
+import { filterOptions } from '../utils';
+
+interface FiltersType {
+  status: string;
+  gender: string;
+  species: string;
+}
+
+type FilterName = keyof FiltersType;
+
+interface SelectedFilters extends Record<keyof FiltersType, string> {}
 
 interface FiltersProps {
   onFilterChange: (filterName: string, filterValue: string) => void;
 }
 
-const filterOptions = {
-  status: [
-    { value: '', label: 'Selecione um status' },
-    { value: 'alive', label: 'Vivo' },
-    { value: 'dead', label: 'Morto' },
-    { value: 'unknown', label: 'Desconhecido' },
-  ],
-  gender: [
-    { value: '', label: 'Selecione um gênero' },
-    { value: 'male', label: 'Masculino' },
-    { value: 'female', label: 'Feminino' },
-    { value: 'genderless', label: 'Sem gênero' },
-    { value: 'unknown', label: 'Desconhecido' },
-  ],
-  species: [
-    { value: '', label: 'Selecione uma espécie' },
-    { value: 'Alien', label: 'Alienígena' },
-    { value: 'Human', label: 'Humano' },
-    { value: 'Mythological Creature', label: 'Criatura Mitológica' },
-    { value: 'Animal', label: 'Animal' },
-    { value: 'Humanoid', label: 'Humanoide' },
-    { value: 'Cronenberg', label: 'Cronenberg' },
-    { value: 'Robot', label: 'Robô' },
-    { value: 'Poopybutthole', label: 'Poopybutthole' },
-    { value: 'unknown', label: 'Desconhecido' },
-  ],
-};
-
  const Filters = ({ onFilterChange }: FiltersProps) => {
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setSelectedFilters((prevSelectedFilters) => ({
+    setSelectedFilters((prevSelectedFilters: SelectedFilters) => ({
       ...prevSelectedFilters,
       [name]: value,
     }));
     onFilterChange(name, value);
   };
 
-   const [selectedFilters, setSelectedFilters] = useState({
+   const [selectedFilters, setSelectedFilters] = useState<SelectedFilters>({
     status: '',
     gender: '',
     species: '',
@@ -59,12 +42,15 @@ const filterOptions = {
   };
 
   return (
-   <FilterContainer>
-      {Object.entries(filterOptions).map(([filterName, options]) => (
+  <FilterContainer>
+    {Object.entries(filterOptions).map(([filterName, options]) => {
+      const key = filterName as FilterName;
+
+      return (
         <FilterSelect
-          key={filterName}
-          name={filterName}
-          value={selectedFilters[filterName]}
+          key={key}
+          name={key}
+          value={selectedFilters[key]}
           onChange={handleFilterChange}
         >
           {options.map(({ value, label }) => (
@@ -73,10 +59,11 @@ const filterOptions = {
             </option>
           ))}
         </FilterSelect>
-      ))}
-      <CardButton onClick={handleClearFilters}>Limpar filtros</CardButton>
-    </FilterContainer>
-  );
+      );
+    })}
+    <CardButton onClick={handleClearFilters}>Limpar filtros</CardButton>
+  </FilterContainer>
+);
 };
 
 export default Filters

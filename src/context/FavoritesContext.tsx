@@ -1,5 +1,5 @@
 // contexts/FavoritesContext.tsx
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, PropsWithChildren  } from 'react';
 import { CharacterCardProps } from '@/components/CharacterCard';
 
 interface FavoritesContextData {
@@ -10,7 +10,7 @@ interface FavoritesContextData {
 
 const FavoritesContext = createContext<FavoritesContextData>({} as FavoritesContextData);
 
-const FavoritesProvider = ({ children }) => {
+const FavoritesProvider  = ({ children }: PropsWithChildren<{}>) => {
   const [favorites, setFavorites] = useState<CharacterCardProps[]>([]);
 
   const addToFavorites = (character: CharacterCardProps) => {

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { SearchInput, ContainerSerach } from './searchBar';
 
 interface SearchBarProps {
-  value: string;
-  onChange: (value: string) => void;
-  onSuggestionSelect: (id: number) => void;
-  onSearch: () => void;
+  value?: string;
+  onChange?: (value: string) => void;
+  onSuggestionSelect?: (id: number) => void;
+  onSearch: (query: string) => void;
 }
+
 const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState('');
 

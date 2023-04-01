@@ -1,6 +1,7 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import Layout from '@/layouts';
-import CharacterDetails, { Character } from '@/CharacterDetails/index';
+import { GetStaticProps, GetStaticPaths } from "next";
+import Layout from "@/layouts";
+import CharacterDetails, { Character } from "@/CharacterDetails/index";
+import { api } from "@/service";
 
 interface DetailsProps {
   character: Character;
@@ -16,8 +17,7 @@ const Details = ({ character }: DetailsProps) => {
 
 export const getStaticProps: GetStaticProps<DetailsProps> = async ({ params }) => {
   const id = params?.id;
-  const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-  const character: Character = await response.json();
+  const { data: character } = await api.get<Character>(`/character/${id}`);
 
   return {
     props: {
@@ -28,8 +28,7 @@ export const getStaticProps: GetStaticProps<DetailsProps> = async ({ params }) =
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch('https://rickandmortyapi.com/api/character');
-  const data = await response.json();
+  const { data } = await api.get("/character");
   const characters = data.results;
 
   const paths = characters.map((character: Character) => ({
@@ -38,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
 

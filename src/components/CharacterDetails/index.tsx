@@ -4,7 +4,6 @@ import useTranslation from 'next-translate/useTranslation';
 import Layout from '@/layouts';
 import { ImageContainer, Detail, DetailsContainer, Title, StyledArrowIcon } from './charcterDetails'
 import Link from 'next/link';
-import {BsArrowReturnLeft} from 'react-icons/bs'
 
 export interface Character {
 	id: number;
@@ -33,13 +32,17 @@ interface CharacterDetailsProps {
 const CharacterDetails = ({ character }: CharacterDetailsProps) => {
 	const { t } = useTranslation('characterData');
 
-	function formatISODate(isoDate) {
+	function formatISODate(isoDate: string) {
 		const date = new Date(isoDate);
 		const day = date.getDate().toString().padStart(2, '0');
 		const month = (date.getMonth() + 1).toString().padStart(2, '0');
 		const year = date.getFullYear().toString();
 		return `${day}/${month}/${year}`;
 	}
+
+function convertSpacesToUnderscores(value: string): string {
+  return value.replace(/ /g, '_');
+}
 
 	return (
 		<Layout>
@@ -59,12 +62,6 @@ const CharacterDetails = ({ character }: CharacterDetailsProps) => {
 							/>
 						</ImageContainer>
 						<DetailsContainer>
-							<Detail>
-								Nome:
-								<span className="font-bold">
-									<span> {character.name}</span>
-								</span>
-							</Detail>
 							{Object.entries(character).map(([key, value], index) => {
 								if (!['name', 'id', 'image', 'url'].includes(key)) {
 									return (
@@ -76,11 +73,12 @@ const CharacterDetails = ({ character }: CharacterDetailsProps) => {
 												: key === 'episode'
 												? value.length
 												: typeof value === 'object'
-												? value.name
-												? value.name
-												: 'N/A' // Exibir "N/A" quando value.name estiver vazio
+												? (() => {
+													const formattedValue = convertSpacesToUnderscores(value.name);
+													return t(`character.${key}.${formattedValue}`) || 'N/A';
+												})()
 												: !value
-												? 'N/A' // Exibir "N/A" quando value estiver vazio
+												? 'N/A'
 												: t(`character.${key}.${value}`)}
 											</span>
 										</Detail>
