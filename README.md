@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+O projeto faz uso de componentes para criar uma lista de personagens da série Rick and Morty. Ele se comunica com a API do Rick and Morty para recuperar dados de personagens e exibir esses dados na interface do usuário. O projeto também possui suporte a tradução para diversos idiomas e permite que os usuários adicionem personagens aos favoritos.
 
-## Getting Started
+# Funcionalidades
 
-First, run the development server:
+- Visualização da lista de personagens da série Rick and Morty, com informações como nome, status, espécie e gênero.
+- Filtro por nome, status, espécie e gênero, permitindo que o usuário encontre personagens específicos de acordo com suas preferências.
+- Visualização detalhada de um personagem selecionado, mostrando informações adicionais como localização, origem, episódios em que aparece e imagem.
+- Adição de personagens aos favoritos, permitindo que o usuário salve seus personagens preferidos em uma lista separada.
+- Visualização da lista de personagens favoritos, permitindo que o usuário veja todos os personagens que salvou em uma única página.
+- Sistema de internacionalização, permitindo que o usuário alterne entre idiomas disponíveis (português e inglês).
+- Responsividade, adaptando-se a diferentes tamanhos de tela para uma melhor experiência do usuário em dispositivos móveis.
+- Tratamento de erros, exibindo mensagens de erro quando ocorrem problemas na aplicação, como falha na conexão com a API ou quando não há resultados para a busca realizada pelo usuário.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+# O um projeto  foi construído com as seguintes tecnologias:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- React: biblioteca JavaScript para construir interfaces de usuário.
+- Next.js: um framework React que permite criar aplicativos React com facilidade, escalabilidade e desempenho.
+- TypeScript: uma linguagem de programação tipada que estende o JavaScript adicionando tipos estáticos.
+- Axios: uma biblioteca JavaScript para fazer solicitações HTTP.
+- Next-translate: um pacote Next.js para tradução de aplicativos.
+- React-icons: uma biblioteca de ícones para React.
+- Styled-components: uma biblioteca para escrever CSS em JavaScript.
+- ESLint: uma ferramenta para identificar e relatar padrões encontrados no código JavaScript.
+- eslint-config-next: um conjunto de regras ESLint para projetos Next.js.
+- babel-plugin-styled-components: um plugin Babel para Styled-components.
+- @types/node, @types/react e @types/react-dom: pacotes que fornecem definições de tipo TypeScript para Node.js, React e ReactDOM.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# O projeto também inclui quatro scripts no arquivo package.json:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- "dev": inicia o ambiente de desenvolvimento.
+- "build": cria uma versão de produção do aplicativo.
+- "start": inicia o servidor em produção.
+- "lint": verifica o código para garantir que esteja seguindo as regras estabelecidas no arquivo de configuração do ESLint.
