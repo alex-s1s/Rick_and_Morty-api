@@ -1,4 +1,5 @@
 // components/SearchBar/styles.ts
+import { breakpoints } from "@/styles/breakpoints";
 import styled from "styled-components";
 
 export const SearchInput = styled.input`
@@ -10,6 +11,10 @@ export const SearchInput = styled.input`
   position: relative;
   width: 50%;
   font-size: 1rem;
+  
+  @media (max-width: ${breakpoints.sm}) {
+    width: 73%;
+  }
 
   &:focus {
     outline: none;

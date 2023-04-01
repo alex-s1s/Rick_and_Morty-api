@@ -50,9 +50,9 @@ function convertSpacesToUnderscores(value: string): string {
 					<StyledArrowIcon />
             </Link>
 			{character ? (
-				<div className="flex flex-col items-center gap-4">
+				<div className="flex flex-col items-center">
 					<Title>{character.name}</Title>
-					<div className="flex items-center gap-4">
+					<div className="flex items-center">
 						<ImageContainer>
 							<Image
 								src={character.image}

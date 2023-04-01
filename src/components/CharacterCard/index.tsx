@@ -64,6 +64,7 @@ const CharacterCard = ({ id, name, status, species, gender, image }: CharacterCa
       <CardContent>
         <CardTitle>{name}</CardTitle>
         <CardText>{`Status: ${t(`characterData:character.status.${status}`)}`}</CardText>
+        <CardText>{`Espécie: ${t(`characterData:character.species.${species}`)}`}</CardText>
         <CardText>{`Gênero: ${t(`characterData:character.gender.${gender}`)}`}</CardText>
         <Link href={`/details/${id}`}>
           <CardButton>{t('common:character.viewDetails')}</CardButton>

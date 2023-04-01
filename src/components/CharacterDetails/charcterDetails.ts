@@ -1,3 +1,4 @@
+import { breakpoints } from "@/styles/breakpoints";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import styled from "styled-components";
 
@@ -18,6 +19,10 @@ const DetailsContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 24px 0px;
+
+  @media (max-width: ${breakpoints.sm}) {
+     gap: 0;
+  }
 `;
 
 const Detail = styled.p`
@@ -36,6 +41,10 @@ const ImageContainer = styled.div`
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.sm}) {
+     width: 100%;
+  }
 `;
 
 const StyledArrowIcon = styled(BsArrowReturnLeft)`

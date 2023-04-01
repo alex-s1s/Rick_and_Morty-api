@@ -1,3 +1,4 @@
+import { breakpoints } from '@/styles/breakpoints';
 import styled from 'styled-components';
 
 export const List = styled.ul`
@@ -15,6 +16,10 @@ export const List = styled.ul`
   left: 50%; // para centralizar
   transform: translateX(-50%); // para ajustar a posição
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); // adicionar sombras
+
+   @media (max-width: ${breakpoints.sm}) {
+    width: 80%;
+  }
 `;
 
 export const ListItem = styled.li`
