@@ -23,6 +23,7 @@ export const filterOptions = {
     { value: 'Cronenberg', label: 'Cronenberg' },
     { value: 'Robot', label: 'Robô' },
     { value: 'Poopybutthole', label: 'Poopybutthole' },
+    { value: "Disease", label: "Doença" },
     { value: 'unknown', label: 'Desconhecido' },
   ],
 };

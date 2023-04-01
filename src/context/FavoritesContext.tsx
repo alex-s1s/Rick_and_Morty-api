@@ -6,12 +6,15 @@ interface FavoritesContextData {
   favorites: CharacterCardProps[];
   addToFavorites: (character: CharacterCardProps) => void;
   removeFromFavorites: (characterId: number) => void;
+  totalCharacters: number,
+  setTotalCharacters: (total: number) => void;
 }
 
 const FavoritesContext = createContext<FavoritesContextData>({} as FavoritesContextData);
 
 const FavoritesProvider  = ({ children }: PropsWithChildren<{}>) => {
   const [favorites, setFavorites] = useState<CharacterCardProps[]>([]);
+  const [totalCharacters, setTotalCharacters] = useState(0);
 
   const addToFavorites = (character: CharacterCardProps) => {
     setFavorites((prevState) => [...prevState, character]);
@@ -22,7 +25,7 @@ const FavoritesProvider  = ({ children }: PropsWithChildren<{}>) => {
   };
 
   return (
-    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
+    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites, totalCharacters, setTotalCharacters }}>
       {children}
     </FavoritesContext.Provider>
   );

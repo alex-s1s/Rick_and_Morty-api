@@ -39,10 +39,10 @@ const CharacterDetails = ({ character }: CharacterDetailsProps) => {
 		const year = date.getFullYear().toString();
 		return `${day}/${month}/${year}`;
 	}
-
-function convertSpacesToUnderscores(value: string): string {
-  return value.replace(/ /g, '_');
-}
+	
+		function convertSpacesToUnderscores(value: string): string {
+		return value.replace(/ /g, '_').replace(/\./g, '');
+		}
 
 	return (
 		<Layout>

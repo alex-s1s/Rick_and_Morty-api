@@ -7,7 +7,7 @@
 		"type": "Tipo",
 		"species": "Espécie",
 		"gender": "Gênero",
-		"episode": "Quantidade de episódios",
+		"episode": "Quantidade de episódios em que apareceu",
 		"created": "Criado em",
 		"url": "Link do personagem",
 		"image": "Link da imagem",

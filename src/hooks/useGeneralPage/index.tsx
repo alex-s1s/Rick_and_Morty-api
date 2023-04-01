@@ -6,6 +6,7 @@ export default function useGeneralPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
   const [suggestedCharacters, setSuggestedCharacters] = useState([]);
   const [filters, setFilters] = useState({
     status: "",
@@ -51,7 +52,7 @@ export default function useGeneralPage() {
   };
 
   const handlePrevPage = () => {
-    setPage((prevPage) => (prevPage !== 0 ? prevPage - 1 : 1));
+    setPage((prevPage) => (prevPage === 1 ? 1 : prevPage - 1));
   };
 
   const handleFilterChange = (filterName: string, filterValue: string) => {

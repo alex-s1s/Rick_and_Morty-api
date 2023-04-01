@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import {FilterContainer, FilterSelect} from './filter'
 import { CardButton } from '../CharacterCard/characterCard';
-import { filterOptions } from '../utils';
+import { filterOptions } from '../../utils';
 
 interface FiltersType {
   status: string;

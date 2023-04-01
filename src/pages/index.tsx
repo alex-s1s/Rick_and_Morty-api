@@ -35,7 +35,7 @@ const Home = () => {
       </SearchWrapper>
       <Filters onFilterChange={handleFilterChange} />
       <CharacterList query={searchQuery} page={page} filters={filters} />
-      <Pagination handlePrevPage={handlePrevPage} handleNextPage={handleNextPage} />
+      <Pagination handlePrevPage={handlePrevPage} handleNextPage={handleNextPage} currentPage={page} />
     </Layout>
   );
 };

@@ -45,6 +45,7 @@ export const CardText = styled.p`
   color: #666666;
   overflow: hidden;
   text-overflow: ellipsis; 
+  wrap: nowrap;
 `;
 
 export const CardButton = styled.button`
