@@ -1,3 +1,4 @@
+import { breakpoints } from "@/styles/breakpoints";
 import styled from "styled-components";
 
 const FloatingButton = styled.button`
@@ -19,6 +20,7 @@ const FloatingButton = styled.button`
   position: relative;
   line-height: 60px;
   text-align: center;
+
 `;
 
 const Badge = styled.span`
@@ -45,6 +47,8 @@ const FloatingButtonContainer = styled.div`
   bottom: 20px;
   z-index: 3;
   right: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 `;
 
 export {Badge, FloatingButton, FloatingButtonContainer}
