@@ -7,7 +7,7 @@ interface SearchBarProps {
   onSuggestionSelect: (id: number) => void;
   onSearch: () => void;
 }
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {

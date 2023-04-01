@@ -1,0 +1,16 @@
+{
+	"character": {
+		"name": "Nome",
+		"location": "Lozalização",
+		"status": "Status",
+		"origin": "Origem",
+		"type": "Tipo",
+		"species": "Espécie",
+		"gender": "Gênero",
+		"episode": "Quantidade de episódios",
+		"created": "Criado em",
+		"url": "Link do personagem",
+		"image": "Link da imagem",
+		"viewDetails": "Ver detalhes"
+	}
+}

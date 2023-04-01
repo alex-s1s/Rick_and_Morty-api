@@ -1,0 +1,33 @@
+{
+	"character": {
+		"status" : {
+			"Alive": "Vivo",
+			"Dead": "Morto",
+			"unknown": "Desconhecido"
+		},
+		"species": {
+			"Alien": "Alienígena",
+			"Human": "Humano",
+			"unknown": "Desconhecido",
+			"Mythological Creature": "Criatura Mitológica",
+			"Animal": "Animal",
+			"Humanoid": "Humanoide",
+			"Cronenberg": "Cronenberg",
+			"Robot": "Robô",
+			"Poopybutthole": "Poopybutthole"
+		},
+		"gender" :{
+			"Female": "Feminino",
+			"Male": "Masculino",
+			"unknown": "Desconhecido",
+			"Genderless": "Sem gênero"
+		},
+		"type":{
+			"Parasite": "Parasita",
+			"unknown": "Desconhecido"
+		},
+		"origin": {
+			"unknown": "Desconhecido"
+		}
+	}
+}

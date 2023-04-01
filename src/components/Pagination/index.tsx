@@ -6,7 +6,7 @@ interface PaginationProps {
   handleNextPage: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ handlePrevPage, handleNextPage }) => {
+const Pagination = ({ handlePrevPage, handleNextPage }: PaginationProps) => {
   return (
     <PaginationContainer>
       <PrevButton onClick={handlePrevPage} >

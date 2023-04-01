@@ -7,13 +7,14 @@ interface SuggestionListProps {
   onSelect: (id: number) => void;
 }
 
-const SuggestionList: React.FC<SuggestionListProps> = ({
+const SuggestionList = ({
   characters,
   onSelect,
-}) => {
+} : SuggestionListProps) => {
   return (
-    <List>
-      {characters.map((character) => (
+      <List>
+      {characters &&
+      characters.map((character) => (
         <ListItem key={character.id} onClick={() => onSelect(character.id)}>
           {character.name}
         </ListItem>

@@ -5,10 +5,11 @@ export const SearchInput = styled.input`
   background-color: #F0F0F0;
   color: #333333;
   border: none;
-  padding: 8px 16px 8px 40px; // Aumente o padding à esquerda para acomodar a lupa
+  padding: 10px 16px 10px 40px; // Aumente o padding à esquerda para acomodar a lupa
   border-radius: 25px; // Aumente o border-radius para torná-lo mais arredondado
   position: relative;
   width: 50%;
+  font-size: 1rem;
 
   &:focus {
     outline: none;

@@ -1,5 +1,14 @@
-import type { AppProps } from 'next/app'
+// pages/_app.tsx
+import React from 'react';
+import { AppProps } from 'next/app';
+import FavoritesProvider from '@/context/FavoritesContext';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <FavoritesProvider>
+      <Component {...pageProps} />
+    </FavoritesProvider>
+  );
 }
+
+export default App;

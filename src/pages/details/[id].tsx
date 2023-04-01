@@ -1,50 +1,45 @@
-// pages/character/[id].tsx
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import Layout from '@/layouts';
-import Image from 'next/image';
+import CharacterDetails, { Character } from '@/CharacterDetails/index';
 
-interface Character {
-  id: number;
-  name: string;
-  image: string;
+interface DetailsProps {
+  character: Character;
 }
 
-const CharacterDetails: React.FC = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  const [character, setCharacter] = useState<Character | null>(null);
-
-  useEffect(() => {
-    if (!id) return;
-
-    const fetchCharacter = async () => {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/${id}`,
-      );
-      const data: Character = await response.json();
-      setCharacter(data);
-    };
-
-    fetchCharacter();
-  }, [id]);
-
-  if (!character) {
-    return (
-      <Layout>
-        <h1>Loading...</h1>
-      </Layout>
-    );
-  }
-
+const Details = ({ character }: DetailsProps) => {
   return (
-     <Layout>
-      <h1>{character.name}</h1>
-      <img src={character.image} alt={character.name} />
-      {/* Render more character details here */}
+    <Layout>
+      <CharacterDetails character={character} />
     </Layout>
   );
 };
 
-export default CharacterDetails;
+export const getStaticProps: GetStaticProps<DetailsProps> = async ({ params }) => {
+  const id = params?.id;
+  const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+  const character: Character = await response.json();
+
+  return {
+    props: {
+      character,
+    },
+    revalidate: 60 * 60 * 24, // 24 hours
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const response = await fetch('https://rickandmortyapi.com/api/character');
+  const data = await response.json();
+  const characters = data.results;
+
+  const paths = characters.map((character: Character) => ({
+    params: { id: character.id.toString() },
+  }));
+
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+};
+
+export default Details;

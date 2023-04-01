@@ -8,3 +8,11 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
   }
 `;
+
+
+export const SearchWrapper = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`;
