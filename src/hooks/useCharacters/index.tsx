@@ -28,13 +28,15 @@ const useCharacters = (
         const { data } = await api.get(`/character/?name=${query}&${filterParams}&page=${page}`);
 
         setCharacters(data.results);
+        setError('');
       } catch (err) {
+        console.error(err);
         setError('Ocorreu um erro ao buscar os personagens');
       }
     };
 
     fetchCharacters();
-  }, [query, filters, page]);
+  }, [query, filters.status, filters.gender, filters.species, page, filters]);
 
   return { characters, error };
 };

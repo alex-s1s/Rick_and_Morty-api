@@ -22,6 +22,7 @@ const FloatingButton = styled.button`
 `;
 
 const Badge = styled.span`
+  z-index: 3;
   position: absolute;
   height: 15px;
   top: -5px;
@@ -42,6 +43,7 @@ const Badge = styled.span`
 const FloatingButtonContainer = styled.div`
   position: fixed;
   bottom: 20px;
+  z-index: 3;
   right: 20px;
 `;
 

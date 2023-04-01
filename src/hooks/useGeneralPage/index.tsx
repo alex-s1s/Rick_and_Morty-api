@@ -16,17 +16,22 @@ export default function useGeneralPage() {
   const handleSearch = useCallback(async (query: string) => {
     setSearchQuery(query);
 
-    const filterParams = Object.entries(filters)
-      .filter(([, value]) => value)
-      .map(([key, value]) => `${key}=${value}`)
-      .join("&");
+    try {
+      const filterParams = Object.entries(filters)
+        .filter(([, value]) => value)
+        .map(([key, value]) => `${key}=${value}`)
+        .join("&");
 
-    if (query.trim().length > 0) {
-      const { data } = await api.get(`/character/?name=${query}&${filterParams}`);
-      setSuggestedCharacters(data.results);
-    } else {
-      setSuggestedCharacters([]);
+      if (query.trim().length > 0) {
+        const { data } = await api.get(`/character/?name=${query}&${filterParams}`);
+        setSuggestedCharacters(data.results);
+      } else {
+        setSuggestedCharacters([]);
+      }
+    } catch (err) {
+      console.log('Ocorreu um erro ao buscar os personagens');
     }
+
   }, [filters]);
 
   useEffect(() => {
@@ -41,14 +46,13 @@ export default function useGeneralPage() {
     router.push(`/details/${id}`);
   };
 
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
 
-    const handleNextPage = () => {
-      setPage((prevPage) => prevPage + 1);
-    };
-
-    const handlePrevPage = () => {
-      setPage((prevPage) => (prevPage !== 0 ? prevPage - 1 : 1));
-    };
+  const handlePrevPage = () => {
+    setPage((prevPage) => (prevPage !== 0 ? prevPage - 1 : 1));
+  };
 
   const handleFilterChange = (filterName: string, filterValue: string) => {
     setFilters((prevFilters) => ({

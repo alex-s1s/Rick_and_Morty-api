@@ -1,4 +1,3 @@
-// components/CharacterCard/styles.ts
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -10,7 +9,6 @@ export const CardContainer = styled.div`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 `;
-
 
 export const ImageContainer = styled.div`
   position: relative;
@@ -27,6 +25,8 @@ export const Image = styled.img`
 
 export const CardContent = styled.div`
   padding: 16px;
+  height: calc(100% - 200px); 
+  overflow: hidden;
 `;
 
 export const CardTitle = styled.h2`
@@ -34,12 +34,17 @@ export const CardTitle = styled.h2`
   font-size: 24px;
   font-weight: bold;
   color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 `;
 
 export const CardText = styled.p`
   margin: 8px 0;
   font-size: 16px;
   color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 `;
 
 export const CardButton = styled.button`
@@ -83,4 +88,3 @@ export const FavoriteIcon = styled.div<FavoriteIconProps>`
   height: 26px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 `;
-

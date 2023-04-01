@@ -42,7 +42,7 @@ interface FiltersProps {
   };
 
   return (
-  <FilterContainer>
+   <FilterContainer>
     {Object.entries(filterOptions).map(([filterName, options]) => {
       const key = filterName as FilterName;
 
