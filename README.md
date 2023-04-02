@@ -1,3 +1,5 @@
+Acesse o projeto em [rick-and-morty-api-uymp.vercel.app/](https://rick-and-morty-api-uymp.vercel.app/)
+
 O projeto faz uso de componentes para criar uma lista de personagens da série Rick and Morty. Ele se comunica com a API do Rick and Morty para recuperar dados de personagens e exibir esses dados na interface do usuário. O projeto também possui suporte a tradução dos personagens, espécies, tipos  e permite que os usuários adicionem personagens aos favoritos.
 
 **Funcionalidades**
