@@ -23,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Container>
         {children}
         {isSidebarOpen && <Sidebar />}
-          <FloatingIcon onClick={toggleSidebar} count={favorites.length} />
+        <FloatingIcon onClick={toggleSidebar} count={favorites.length} isSidebarOpen={isSidebarOpen}/>
       </Container>
     </>
   );

@@ -8,6 +8,7 @@ interface FavoritesContextData {
   removeFromFavorites: (characterId: number) => void;
   totalCharacters: number,
   setTotalCharacters: (total: number) => void;
+  toggleFavorite: (character: CharacterCardProps) => void;
 }
 
 const FavoritesContext = createContext<FavoritesContextData>({} as FavoritesContextData);
@@ -24,8 +25,16 @@ const FavoritesProvider  = ({ children }: PropsWithChildren<{}>) => {
     setFavorites((prevState) => prevState.filter((character) => character.id !== characterId));
   };
 
+    const toggleFavorite = (character: CharacterCardProps) => {
+    if (favorites.some((favorite) => favorite.id === character.id)) {
+      removeFromFavorites(character.id);
+    } else {
+      addToFavorites(character);
+    }
+  };
+
   return (
-    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites, totalCharacters, setTotalCharacters }}>
+    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites, totalCharacters, setTotalCharacters, toggleFavorite }}>
       {children}
     </FavoritesContext.Provider>
   );

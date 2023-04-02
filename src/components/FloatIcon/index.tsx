@@ -6,9 +6,10 @@ import { breakpoints } from '@/styles/breakpoints';
 interface FloatingIconProps {
   onClick: () => void;
   count: number;
+  isSidebarOpen: boolean;
 }
 
-const FloatingIcon = ({ onClick, count }: FloatingIconProps) => {
+const FloatingIcon = ({ onClick, count, isSidebarOpen }: FloatingIconProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isRendered, setIsRendered] = useState(true);
 
@@ -18,7 +19,10 @@ const FloatingIcon = ({ onClick, count }: FloatingIconProps) => {
     let lastScrollTop = 0;
 
     const handleScroll = () => {
-      if (!isMobile()) return; // Adicione esta linha para verificar se está na largura mobile
+      if (!isMobile() || isSidebarOpen) {
+        setIsVisible(true);
+        return;
+      }
 
       const currentScrollTop = window.pageYOffset;
 
@@ -34,12 +38,12 @@ const FloatingIcon = ({ onClick, count }: FloatingIconProps) => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile, isSidebarOpen]);
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
 
-    if (!isVisible) {
+    if (!isVisible && !isSidebarOpen) {
       timer = setTimeout(() => {
         setIsRendered(false);
       }, 300); // Espere 300ms, que é o tempo de duração da animação da opacidade

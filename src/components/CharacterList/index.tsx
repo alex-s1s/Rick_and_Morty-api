@@ -25,15 +25,7 @@ const CharacterList = ({ query, filters, page }: CharacterListProps) => {
         characters.map((character) => (
           <GridItem key={character.id}>
             <CharacterCard
-              id={character.id}
-              name={character.name}
-              image={character.image}
-              gender={character.gender}
-              location={character.location}
-              origin={character.origin}
-              species={character.species}
-              status={character.status}
-              type={character.type}
+              character={character}
             />
           </GridItem>
         ))}

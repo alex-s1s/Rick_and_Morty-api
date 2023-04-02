@@ -1,6 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "@/layouts";
 import CharacterDetails, { Character } from "@/CharacterDetails/index";
+import axios from "axios";
 import { api } from "@/service";
 
 interface DetailsProps {
@@ -17,7 +18,7 @@ const Details = ({ character }: DetailsProps) => {
 
 export const getStaticProps: GetStaticProps<DetailsProps> = async ({ params }) => {
   const id = params?.id;
-  const { data: character } = await api.get<Character>(`/character/${id}`);
+  const { data: character } = await api.get<Character>(`https://rickandmortyapi.com/api/character/${id}`);
 
   return {
     props: {
@@ -28,7 +29,7 @@ export const getStaticProps: GetStaticProps<DetailsProps> = async ({ params }) =
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await api.get("/character");
+  const { data } = await axios.get("https://rickandmortyapi.com/api/character");
   const characters = data.results;
 
   const paths = characters.map((character: Character) => ({
