@@ -1,4 +1,4 @@
-O projeto faz uso de componentes para criar uma lista de personagens da série Rick and Morty. Ele se comunica com a API do Rick and Morty para recuperar dados de personagens e exibir esses dados na interface do usuário. O projeto também possui suporte a tradução para diversos idiomas e permite que os usuários adicionem personagens aos favoritos.
+O projeto faz uso de componentes para criar uma lista de personagens da série Rick and Morty. Ele se comunica com a API do Rick and Morty para recuperar dados de personagens e exibir esses dados na interface do usuário. O projeto também possui suporte a tradução dos personagens, espécies, tipos  e permite que os usuários adicionem personagens aos favoritos.
 
 # Funcionalidades
 
@@ -13,21 +13,22 @@ O projeto faz uso de componentes para criar uma lista de personagens da série R
 
 # O um projeto  foi construído com as seguintes tecnologias:
 
-- React: biblioteca JavaScript para construir interfaces de usuário.
-- Next.js: um framework React que permite criar aplicativos React com facilidade, escalabilidade e desempenho.
-- TypeScript: uma linguagem de programação tipada que estende o JavaScript adicionando tipos estáticos.
-- Axios: uma biblioteca JavaScript para fazer solicitações HTTP.
-- Next-translate: um pacote Next.js para tradução de aplicativos.
-- React-icons: uma biblioteca de ícones para React.
-- Styled-components: uma biblioteca para escrever CSS em JavaScript.
-- ESLint: uma ferramenta para identificar e relatar padrões encontrados no código JavaScript.
-- eslint-config-next: um conjunto de regras ESLint para projetos Next.js.
-- babel-plugin-styled-components: um plugin Babel para Styled-components.
-- @types/node, @types/react e @types/react-dom: pacotes que fornecem definições de tipo TypeScript para Node.js, React e ReactDOM.
+- **React:** biblioteca JavaScript para construir interfaces de usuário.
+- **Next.js:** um framework React que permite criar aplicativos React com facilidade, escalabilidade e desempenho.
+- **TypeScript:** uma linguagem de programação tipada que estende o JavaScript adicionando tipos estáticos.
+- **ContextApi:** um recurso para gerenciamento do estado global da aplicação.
+- **Axios:** uma biblioteca JavaScript para fazer solicitações HTTP.
+- **Next-translate:** um pacote Next.js para tradução de aplicativos.
+- **React-icons:** uma biblioteca de ícones para React.
+- **Styled-components:** uma biblioteca para escrever CSS em JavaScript.
+- **ESLint:** uma ferramenta para identificar e relatar padrões encontrados no código JavaScript.
+- **eslint-config-next:** um conjunto de regras ESLint para projetos Next.js.
+- **babel-plugin-styled-components:** um plugin Babel para Styled-components.
+- **@types/node, @types/react e @types/react-dom:** pacotes que fornecem definições de tipo TypeScript para Node.js, React e ReactDOM.
 
 # O projeto também inclui quatro scripts no arquivo package.json:
 
-- "dev": inicia o ambiente de desenvolvimento.
-- "build": cria uma versão de produção do aplicativo.
-- "start": inicia o servidor em produção.
-- "lint": verifica o código para garantir que esteja seguindo as regras estabelecidas no arquivo de configuração do ESLint.
+- **"dev":** inicia o ambiente de desenvolvimento.
+- **"build":** cria uma versão de produção do aplicativo.
+- **"start":** inicia o servidor em produção.
+- **"lint":** verifica o código para garantir que esteja seguindo as regras estabelecidas no arquivo de configuração do ESLint.
