@@ -26,12 +26,20 @@ O projeto faz uso de componentes para criar uma lista de personagens da série R
 - **babel-plugin-styled-components:** um plugin Babel para Styled-components.
 - **@types/node, @types/react e @types/react-dom:** pacotes que fornecem definições de tipo TypeScript para Node.js, React e ReactDOM.
 
-**O projeto também inclui quatro scripts no arquivo package.json**
+**Para executar o projeto, siga os seguintes passos:**
 
-- **"dev":** inicia o ambiente de desenvolvimento.
-- **"build":** cria uma versão de produção do aplicativo.
-- **"start":** inicia o servidor em produção.
-- **"lint":** verifica o código para garantir que esteja seguindo as regras estabelecidas no arquivo de configuração do ESLint.
+- Certifique-se de ter o Node.js instalado em sua máquina.
+- Clone o repositório do projeto.
+- Abra o terminal na pasta raiz do projeto.
+- Execute o comando **npm install** para instalar todas as dependências necessárias.
+
+**Após a conclusão da instalação, execute um dos seguintes comandos, dependendo do que deseja fazer:**
+- Para iniciar o ambiente de desenvolvimento: **npm run dev**
+- Para criar uma versão de produção do aplicativo: **npm run build**
+- Para iniciar o servidor em produção: **npm start**
+- Para verificar o código seguindo as regras estabelecidas no arquivo de configuração do ESLint: **npm run lint**
+
+Certifique-se de seguir esses passos na ordem apresentada para garantir que todas as dependências sejam instaladas corretamente e que o projeto seja executado sem problemas.
 
 **Melhorias**
 
