@@ -1,6 +1,6 @@
 O projeto faz uso de componentes para criar uma lista de personagens da série Rick and Morty. Ele se comunica com a API do Rick and Morty para recuperar dados de personagens e exibir esses dados na interface do usuário. O projeto também possui suporte a tradução dos personagens, espécies, tipos  e permite que os usuários adicionem personagens aos favoritos.
 
-# Funcionalidades
+**Funcionalidades**
 
 - Visualização da lista de personagens da série Rick and Morty, com informações como nome, status, espécie e gênero.
 - Filtro por nome, status, espécie e gênero, permitindo que o usuário encontre personagens específicos de acordo com suas preferências.
@@ -11,7 +11,7 @@ O projeto faz uso de componentes para criar uma lista de personagens da série R
 - Responsividade, adaptando-se a diferentes tamanhos de tela para uma melhor experiência do usuário em dispositivos móveis.
 - Tratamento de erros, exibindo mensagens de erro quando ocorrem problemas na aplicação, como falha na conexão com a API ou quando não há resultados para a busca realizada pelo usuário.
 
-# O um projeto  foi construído com as seguintes tecnologias:
+**O projeto  foi construído com as seguintes tecnologias:**
 
 - **React:** biblioteca JavaScript para construir interfaces de usuário.
 - **Next.js:** um framework React que permite criar aplicativos React com facilidade, escalabilidade e desempenho.
@@ -26,9 +26,13 @@ O projeto faz uso de componentes para criar uma lista de personagens da série R
 - **babel-plugin-styled-components:** um plugin Babel para Styled-components.
 - **@types/node, @types/react e @types/react-dom:** pacotes que fornecem definições de tipo TypeScript para Node.js, React e ReactDOM.
 
-# O projeto também inclui quatro scripts no arquivo package.json:
+**O projeto também inclui quatro scripts no arquivo package.json**
 
 - **"dev":** inicia o ambiente de desenvolvimento.
 - **"build":** cria uma versão de produção do aplicativo.
 - **"start":** inicia o servidor em produção.
 - **"lint":** verifica o código para garantir que esteja seguindo as regras estabelecidas no arquivo de configuração do ESLint.
+
+**Melhorias**
+
+- Adicionar testes.
