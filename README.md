@@ -46,3 +46,14 @@ Certifique-se de seguir esses passos na ordem apresentada para garantir que toda
 **Melhorias: Adicionar testes**
 
 Alguns exemplos de testes que podem ser adicionados ao projeto são testes de unidade para as funções de busca e filtro, testes de integração para a comunicação com a API do Rick and Morty e testes de UI para garantir que os componentes estejam sendo renderizados corretamente e que a interface esteja funcionando conforme o esperado.
+
+**Mobile**
+
+
+<div style={{display: "flex", marginTop: "20px"}}>
+  <img src="https://user-images.githubusercontent.com/42866851/229369885-00d3335e-0690-46c2-99f0-e8ff4c03e7da.png" style="display: inline-block; width: 30%;">
+  <img src="https://user-images.githubusercontent.com/42866851/229369888-7180343a-3223-43a8-a3e0-73b5f4cd5879.png" style="display: inline-block; width: 30%;">
+  <img src="https://user-images.githubusercontent.com/42866851/229369896-d8018bde-afad-4103-acce-5e4e064b30f8.png" style="display: inline-block; width: 30%;">
+</div>
+
+
