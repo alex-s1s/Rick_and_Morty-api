@@ -43,6 +43,6 @@ O projeto faz uso de componentes para criar uma lista de personagens da série R
 
 Certifique-se de seguir esses passos na ordem apresentada para garantir que todas as dependências sejam instaladas corretamente e que o projeto seja executado sem problemas.
 
-**Melhorias**
+**Melhorias: Adicionar testes**
 
-- Adicionar testes.
+Alguns exemplos de testes que podem ser adicionados ao projeto são testes de unidade para as funções de busca e filtro, testes de integração para a comunicação com a API do Rick and Morty e testes de UI para garantir que os componentes estejam sendo renderizados corretamente e que a interface esteja funcionando conforme o esperado.
